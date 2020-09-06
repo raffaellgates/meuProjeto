@@ -1,7 +1,6 @@
 from django.db import models
-from datetime import date
+from django.utils import timezone
 
-class Enquete(object):
-	def __init__(self, texto='', data_publicacao=date.today()):
-		self.texto = texto
-		self.data_publicacao = data_publicacao
+class Enquete(models.Model):
+	texto = models.CharField(max_length=100)
+	data_publicacao = models.DateField()
